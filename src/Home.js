@@ -11,7 +11,10 @@ const Home = () => {
     e.preventDefault();
     let charset = "";
     let newPassword = "";
-
+    if (!symbol && !number && !lowerCase && !upperCase) {
+      charset =
+        "!@#$%^&*()0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    }
     if (symbol) charset += "!@#$%^&*()";
     if (number) charset += "0123456789";
     if (lowerCase) charset += "abcdefghijklmnopqrstuvwxyz";
@@ -26,7 +29,6 @@ const Home = () => {
 
   return (
     <>
-      <h1>Geeksforgeeks</h1>
       <h2>Random Password Generator</h2>
       <form>
         <label>Password Length: </label>
